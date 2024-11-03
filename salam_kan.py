@@ -49,10 +49,10 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # we need the dataset in this shape.
 dataset = {
-    'train_input': torch.tensor(x_train.values).float().to(device).unsqueeze(1),
-    'test_input': torch.tensor(x_test.values).float().to(device).unsqueeze(1),
-    'train_label': torch.tensor(y_train.values).float().to(device).unsqueeze(1),
-    'test_label': torch.tensor(y_test.values).float().to(device).unsqueeze(1)
+    'train_input': torch.tensor(x_train).float().to(device).unsqueeze(1),
+    'test_input': torch.tensor(x_test).float().to(device).unsqueeze(1),
+    'train_label': torch.tensor(y_train).float().to(device).unsqueeze(1),
+    'test_label': torch.tensor(y_test).float().to(device).unsqueeze(1)
 }
 print("Data shape is:")
 print(dataset['train_input'].shape, dataset['train_label'].shape)
